@@ -440,7 +440,8 @@ And then connect to your router using `SCP protocol` and download from `/tmp` th
 
 If you have an external FLASH programmer (all supported devices have **SPI NOR FLASH** chips), you probably know how to use it. Download package with prebuilt images or compile the code, choose right file for your device and put it on FLASH at the beginning (offset `0x00000`). Remember to first erase block(s) - with high probability, if you use some kind of automatic mode, the programmer will do it for you.
 
-All prebuilt images are padded with 0xFF and since change "**![Extend maximum U-Boot image size up to 123 KB](https://github.com/pepe2k/u-boot_mod/commit/7829f50c0e92024fde613cb01e65cbdeae1f126b)**", in most supported devices, **their size is no longer a multiple of 64 KiB block**. For example, **TP-Link** uses only first **64 KiB** block to store compressed U-Boot image (in most of their modern devices). In the second 64 KiB block they store additional information like MAC address, model number and WPS pin number. This modification will use both sectors for U-Boot image and also other data, including small block for writable environment variables.
+All prebuilt images are padded with 0xFF and since change "**![Extend maximum U-Boot image size up to 123 KB](https://github.com/pepe2k/u-boot_mod/commit/7829f50c0e92024fde613cb01e65cbdeae1f126b)[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Frettichschnidi%2Fplan-b-u-boot_mod.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Frettichschnidi%2Fplan-b-u-boot_mod?ref=badge_shield)
+**", in most supported devices, **their size is no longer a multiple of 64 KiB block**. For example, **TP-Link** uses only first **64 KiB** block to store compressed U-Boot image (in most of their modern devices). In the second 64 KiB block they store additional information like MAC address, model number and WPS pin number. This modification will use both sectors for U-Boot image and also other data, including small block for writable environment variables.
 
 Below image with beginning part of FLASH memory map for TP-Link TL-MR3020 shows differences between stock version and this modification.
 
@@ -804,3 +805,7 @@ Credits
 - Thanks to Krzysztof M. for donating a TL-WDR3600 router
 - Thanks to *pupie* from OpenWrt forum for his great help
 - Thanks for all donators and for users who contributed in code development
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Frettichschnidi%2Fplan-b-u-boot_mod.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Frettichschnidi%2Fplan-b-u-boot_mod?ref=badge_large)
